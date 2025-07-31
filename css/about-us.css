@@ -1,7 +1,7 @@
 /* css/about-us.css */
 
 .about-us-hero {
-    background-image: linear-gradient(rgba(#85CCAA), rgba(0, 0, 0, 0.5)), url('../images/location/frederick-office.jpg');
+    background-image: linear-gradient(rgba(#85CCAA), rgba(0, 0, 0, 0.5)), url('/images/location/frederick-office.jpg');
     background-size: cover;
     background-position: center;
     color: white;

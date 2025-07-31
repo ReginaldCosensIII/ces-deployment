@@ -6,7 +6,7 @@
 
 /* Sets the unique hero image and color for this page */
 .voip-solutions-page .page-hero {
-    background-image: url('../images/voip-solutions/devicesgraphic-1920w.jpg');
+    background-image: url('/images/voip-solutions/devicesgraphic-1920w.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -163,7 +163,7 @@
 
 .accordion-header {
     background-color: #85CCAA;
-    color: white;
+    color: var(--color-maroon);
     cursor: pointer;
     padding: 1.25rem;
     width: 100%;
