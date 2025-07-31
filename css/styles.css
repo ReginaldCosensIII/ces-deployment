@@ -16,6 +16,13 @@ body {
     color: var(--color-text);
     background-color: var(--color-white);
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
 }
 
 h1, h2, h3, h4 {
@@ -34,6 +41,12 @@ a:hover {
     text-decoration: underline;
 }
 
+.highlight-link-wrapper,
+.highlight-link-wrapper:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
 .container {
     width: 95%;
     max-width: 1200px;
@@ -47,7 +60,7 @@ a:hover {
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
     padding: 2.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Ensures all cards in a row have the same height */
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -70,7 +83,6 @@ a:hover {
     padding: 1rem 0;
 }
 
-/* --- Mobile Header Spacing Adjustments --- */
 .header-top-grid {
     display: grid;
     grid-template-columns: 1fr auto;
@@ -79,7 +91,7 @@ a:hover {
 }
 
 .logo-image-wide {
-    height: 60px; /* Adjust as needed */
+    height: 60px;
     width: auto;
 }
 
@@ -92,7 +104,7 @@ a:hover {
     font-weight: 700;
     color: var(--color-maroon);
     font-style: italic;
-    display: none; /* This hides it on mobile */
+    display: none;
 }
 
 .contact-sub-text {
@@ -109,13 +121,13 @@ a:hover {
 }
 
 .header-nav-bar {
-    display: none; /* Hidden on mobile, shown via JS or on desktop */
+    display: none;
     background-color: var(--color-dark-slate);
 }
 
 .main-nav-list {
     margin: 0;
-    padding: 0; /* Removed unnecessary padding */
+    padding: 0;
     list-style: none;
     display: flex;
     justify-content: center;
@@ -124,16 +136,16 @@ a:hover {
 }
 
 .main-nav-list li {
-    margin: 0; /* Let the link's padding handle the spacing */
+    margin: 0;
 }
 
 .main-nav-list a {
-    display: block; /* Ensures padding is applied correctly */
+    display: block;
     color: #fff;
     text-decoration: none;
-    font-size: 1.1rem; /* A cleaner, slightly larger font (around 17-18px) */
+    font-size: 1.1rem;
     font-weight: 500;
-    padding: 0.4rem 1rem; /* Balanced vertical and horizontal padding */
+    padding: 0.4rem 1rem;
     border-radius: 3px;
     transition: background-color 0.3s;
 }
@@ -141,7 +153,7 @@ a:hover {
 .main-nav-list a.active {
     font-weight: bold;
     text-decoration: underline;
-    color: #ffffff; /* Ensures the color remains white */
+    color: #ffffff;
 }
 
 .main-nav-list a:hover {
@@ -204,7 +216,7 @@ a:hover {
 .hero-section {
     position: relative;
     display: flex;
-    align-items: center; /* Vertically center content on mobile */
+    align-items: center;
     padding: 1rem 0 6rem 0;
     box-sizing: border-box;
     color: var(--color-text);
@@ -236,7 +248,7 @@ a:hover {
 }
 
 .hero-sub-headline {
-    font-size: 1.2rem; /* Increased font size */
+    font-size: 1.2rem;
     font-weight: 400;     
     color: var(--color-text);
     margin: 1.5rem 0 2rem 0;
@@ -249,6 +261,14 @@ a:hover {
     align-items: flex-start;
     gap: 1rem;
     margin-top: 2.5rem;
+}
+
+.hero-cta-subtext {
+    font-style: italic;
+    color: var(--color-light-green);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
 }
 
 .button-primary {
@@ -288,7 +308,7 @@ a:hover {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     display: flex;
-    flex-direction: column; /* Stacks icon on top of content on mobile */
+    flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1.5rem;
@@ -302,7 +322,7 @@ a:hover {
     width: 60px;
     height: 60px;
     fill: var(--color-maroon);
-    flex-shrink: 0; /* Prevents icon from shrinking */
+    flex-shrink: 0;
 }
 
 .cta-right-content {
@@ -322,7 +342,7 @@ a:hover {
 
 .cta-bottom-row {
     display: flex;
-    flex-direction: column; /* Stacks text and button on mobile */
+    flex-direction: column;
     align-items: center;
     gap: 1.5rem;
 }
@@ -331,7 +351,7 @@ a:hover {
     font-size: 1.25rem;
     line-height: 1.25;
     opacity: 0.9;
-    max-width: 60ch; /* Limits line length for readability */
+    max-width: 60ch;
     margin: 0;
     padding-bottom: 0.5rem;
 }
@@ -369,7 +389,7 @@ a:hover {
     color: #555;
     line-height: 1.6;
     margin-top: -1.5rem;
-    margin-bottom: 1.5rem; /* Reduced for mobile */
+    margin-bottom: 1.5rem;
     max-width: 800px; 
 }
 
@@ -379,7 +399,6 @@ a:hover {
 }
 
 .section-heading.text-center + .section-subheading {
-    
     margin-left: auto;
     margin-right: auto;
 }
@@ -462,13 +481,6 @@ a:hover {
     text-align: center;
 }
 
-.quote-card-attribution {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-}
-
 .attribution-avatar {
     width: 80px;
     height: 80px;
@@ -484,7 +496,6 @@ a:hover {
 .featured-quote-section-modern {
     padding: 4rem 0 6rem;
     background-color: white;
-    
 }
 
 .quote-card {
@@ -493,11 +504,6 @@ a:hover {
     text-align: left;
     height: auto;
     background-color: white;
-}
-
-.quote-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
 }
 
 .quote-card-icon {
@@ -544,7 +550,7 @@ a:hover {
 
 .services-section {
     padding: 4rem 0 2rem;
-    background:  var(--color-bg-light);
+    background: var(--color-bg-light);
 }
 
 .text-center { text-align: center; }
@@ -566,25 +572,10 @@ a:hover {
     height: auto;
 }
 
-.services-grid .card {
-    height: auto;
-}
-
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
 .service-card .button-primary {
     padding: 0.4rem 1.2rem;
     margin-top: auto; 
     align-self: flex-end;
-}
-
-.service-card-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 1.0rem;
 }
 
 .service-card-title {
@@ -755,16 +746,6 @@ a:hover {
     background-color: var(--color-dark-slate);
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-}
-
 .section-footer {    
     display: flex;
     flex-direction: column;
@@ -799,6 +780,8 @@ main {
     margin-right: auto;
 }
 
+/* --- Media Queries --- */
+
 @media (min-width: 992px) {
     .section-footer-cta {
         flex-direction: row;
@@ -808,9 +791,7 @@ main {
     .section-footer-text {
         font-size: 1.8rem;
     }
-}
 
-@media (min-width: 992px) {
     .header-left { display: flex; }
     .header-right { grid-column: 3 / 4; text-align: right; }
     .mobile-menu-toggle-wrapper { display: none; }
@@ -826,23 +807,28 @@ main {
         display: block;
     }
     
-.hero-section {
-    align-items: center;
-    min-height: 60vh;
-    max-height: 700px;
-    padding: 1.5rem 0 7rem 0;
-    background-image: url('../images/ces_homepage_image.jpg');
-    background-size: cover;
-    background-position: right center;
-}
+    .hero-section {
+        align-items: center;
+        min-height: 60vh;
+        max-height: 700px;
+        padding: 1.5rem 0 7rem 0;
+        background-image: url('../images/ces_homepage_image.jpg');
+        background-size: cover;
+        background-position: right center;
+    }
 
-.hero-headline {
-    margin-bottom: 0.5rem;
-}
+    .hero-headline {
+        margin-bottom: 0.5rem;
+    }
 
     .hero-gradient-overlay { display: block; }
     .hero-content { max-width: 55%; }
-    .hero-buttons { flex-direction: row; }
+    
+    .hero-buttons {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+    }
 
     .cta-banner { padding: 3rem 0 5rem 0; }
     .cta-content {
@@ -893,11 +879,6 @@ main {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .service-card-icon, .icon-wrapper {
-        margin-left: 0;
-        margin-right: auto;
-    }
-
     .testimonial-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -922,26 +903,22 @@ main {
     .container {
         max-width: 1400px;
     }
-
     .hero-headline {
         font-size: 2.8rem;
     }
-
     .section-heading {
         font-size: 2.6rem;
     }
 }
 
 @media (min-width: 1920px) {
-
     .hero-section {
         min-height: 60vh;
         padding: 2rem 0 7rem 0;
         align-items: center;
     }
 
-    .hero-headline {
-        
+    .hero-headline {        
         margin-bottom: 2rem;
     }
 
@@ -961,22 +938,21 @@ main {
     }
 
     .cta-main-icon {
-        width: 80px; /* Example size adjustment */
+        width: 80px;
         height: 80px;
     }
 
     .cta-text-block h3 {
-        text-align: center;
         font-size: 3.0em;
         margin: 0;
-        padding-bottom: 0.5rem; /* Adjust this value to add more or less space */
+        padding-bottom: 0.5rem;
     }
 
     .cta-supporting-text {
         font-size: 1.5rem;
         line-height: 1.3;
         opacity: 0.9;
-        max-width: 75ch; /* Limits line length for readability */
+        max-width: 75ch;
         margin: 0;
         padding-bottom: 1.0rem;
     }
@@ -992,264 +968,10 @@ main {
     .questions-intro-heading {
         font-size: 2.2rem;
     }
-
+    
+    /* On very wide screens, we can go back to a 4-column layout 
     .services-grid {
         justify-content: space-evenly;
-        grid-template-columns: repeat(3, minmax(0, 500px));
-    }
-
-}
-/* ======================================================= */
-/* Styles for Business Lines Section (with Hover & Links)  */
-/* ======================================================= */
-.business-lines-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    margin-top: 3rem;
-}
-
-.business-line-item {
-    transition: transform 0.3s ease;
-}
-
-.business-line-item:hover {
-    transform: scale(1.05); /* Enlarges the item on hover */
-}
-
-.business-line-link {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5rem;
-    text-align: left;
-    text-decoration: none; /* Removes the default underline */
-}
-
-.business-line-link:hover {
-    text-decoration: none; /* Ensures no underline on hover either */
-}
-
-.business-line-icon {
-    flex-shrink: 0;
-    width: 50px;
-    height: 50px;
-}
-
-.business-line-icon svg {
-    width: 100%;
-    height: 100%;
-}
-
-.business-line-text h4 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--color-dark-slate);
-    margin: 0 0 0.5rem 0;
-    transition: color 0.3s ease;
-}
-
-.business-line-link:hover .business-line-text h4 {
-    color: var(--color-maroon); /* Changes title color on hover */
-}
-
-.business-line-text p {
-    margin: 0;
-    line-height: 1.6;
-    color: var(--color-text);
-}
-
-/* Desktop layout for the grid */
-@media (min-width: 768px) {
-    .business-lines-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem 2.5rem;
-    }
-}
-
-/* ======================================================= */
-/* Styles for Alternate Business Lines Grid (2x2 to 4x1) */
-/* ======================================================= */
-.service-card-link {
-    text-decoration: none;
-    color: var(--color-text);
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.service-card-link:hover {
-    text-decoration: none;
-}
-
-.service-card-link:hover .service-card-title {
-    color: var(--color-maroon);
-}
-
-.business-lines-grid-alt {
-    grid-template-columns: 1fr; /* 1 column on mobile */
-}
-
-/* 2x2 grid for standard desktops */
-@media (min-width: 768px) {
-    .business-lines-grid-alt {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* 4x1 grid for very wide screens */
-@media (min-width: 1920px) {
-    .business-lines-grid-alt {
         grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* --- Carousel for Business Lines --- */
-.carousel-container {
-    position: relative;
-    width: 100%;
-    margin: 1rem auto 2rem; /* Reduced top margin for mobile */
-    overflow: hidden;
-}
-
-.carousel-slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
-.carousel-slide.active {
-    opacity: 1;
-}
-
-.slide-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem 50px;
-}
-
-.slide-text {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    max-width: 50ch;
-}
-
-.slide-text h4 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--color-dark-slate);
-    margin-top: 0rem;
-    margin-bottom: 0.75rem;
-}
-
-.slide-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #555;
-}
-
-.long-text {
-    display: none;
-}
-.short-text {
-    display: block;
-}
-
-.slide-image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.slide-image img:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-}
-
-.carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 10;
-}
-
-.carousel-control.prev {
-    left: 10px;
-}
-
-.carousel-control.next {
-    right: 10px;
-}
-
-.carousel-dots {
-    text-align: center;
-    margin-top: 1rem;
-}
-
-.carousel-dots .dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #ccc;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.carousel-dots .dot.active {
-    background-color: var(--color-dark-slate);
-}
-
-
-/* Responsive styles for carousel */
-@media (min-width: 768px) {
-    .slide-content {
-        flex-direction: row;
-        text-align: left;
-        align-items: center;
-        padding: 2rem 60px;
-        justify-content: center; 
-        gap: 5%; 
-    }
-
-    .slide-text {
-        flex: 1 1 45%;
-        max-width: 45%;
-        padding-right: 0;
-        text-align: left;
-        margin-bottom: 0;
-    }
-    
-    .long-text {
-        display: block;
-    }
-    .short-text {
-        display: none;
-    }
-
-    .slide-image {
-        flex: 1 1 45%;
-        max-width: 45%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .slide-image img {
-        width: 100%;
-    }
+    }*/
 }
