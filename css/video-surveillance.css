@@ -6,7 +6,7 @@
 
 /* Sets the unique hero image for this page */
 .video-surveillance-page .page-hero {
-    background-image: url('../images/video-surveillance/AIVS-Overlay_1920w.jpg');
+    background-image: url('/images/video-surveillance/AIVS-Overlay_1920w.jpg');
 }
 
 /* --- Page-Specific Product Card Layout --- */
