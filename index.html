@@ -10,7 +10,6 @@
   <link rel="apple-touch-icon" href="/images/favicon1.png">
   <link rel="stylesheet" href="/css/styles.css">
 
-  <!-- Preload hero poster for a fast first paint -->
   <link rel="preload" as="image" href="/media/hero/poster-v1.jpg" imagesrcset="/media/hero/poster-v1.jpg" />
 
   <meta property="og:title" content="Managed IT Services, Cybersecurity, VoIP, Video Surveillance - CES IT Support Frederick, MD and DC Metro area">
@@ -76,18 +75,9 @@
   </header>
 
   <main>
-    <!-- NEW HERO (v1 wired) -->
     <section class="hero hero--video" aria-label="CES IT Services — trusted IT partner for Frederick, DC Metro, Northern Virginia">
-      <!-- Top-of-hero (mobile pinned) -->
-      <div class="stat-badge stat-badge--top stat-badge--shield">
-        <span class="stat-badge__icon" aria-hidden="true"></span>
-        <span class="stat-badge__label">CES 2–5 minute tech response is unmatched</span>
-      </div>
-
+      
       <div class="hero__media">
-        <!-- Responsive, multi-source video setup.
-             For now, all sources point to your existing encodes so nothing breaks.
-             When new encodes are ready, replace the SWAP HERE paths accordingly. -->
         <video
           class="hero__video"
           autoplay
@@ -97,33 +87,19 @@
           preload="metadata"
           poster="/media/hero/poster-v1.jpg"
         >
-          <!-- Prefer modern codecs first (WebM/VP9 or AV1) -->
-          <!-- Mobile (≤768px) -->
-          <!-- SWAP HERE to /media/hero/hero-mobile.webm when available -->
           <source src="/media/hero/hero-v1.webm" type="video/webm" media="(max-width: 768px)">
-          <!-- Laptops / most desktops (≤1440px) -->
-          <!-- SWAP HERE to /media/hero/hero-1080.webm when available -->
           <source src="/media/hero/hero-v1.webm" type="video/webm" media="(max-width: 1440px)">
-          <!-- Large / 4k-ish monitors (≥1441px) -->
-          <!-- SWAP HERE to /media/hero/hero-2160.webm when available -->
           <source src="/media/hero/hero-v1.webm" type="video/webm" media="(min-width: 1441px)">
 
-          <!-- MP4 fallbacks in the same breakpoints -->
-          <!-- SWAP HERE to /media/hero/hero-mobile.mp4 when available -->
           <source src="/media/hero/hero-v1.mp4" type="video/mp4" media="(max-width: 768px)">
-          <!-- SWAP HERE to /media/hero/hero-1080.mp4 when available -->
           <source src="/media/hero/hero-v1.mp4" type="video/mp4" media="(max-width: 1440px)">
-          <!-- SWAP HERE to /media/hero/hero-2160.mp4 when available -->
           <source src="/media/hero/hero-v1.mp4" type="video/mp4" media="(min-width: 1441px)">
 
-          <!-- Last-resort fallback image if video can’t play -->
           <img src="/media/hero/poster-v1.jpg" alt="IT professional at workstation in a modern operations room">
         </video>
 
-        <!-- Subtle dark scrim for legibility -->
         <div class="hero__scrim" aria-hidden="true"></div>
 
-        <!-- No-JS fallback poster -->
         <noscript>
           <img src="/media/hero/poster-v1.jpg" alt="IT professional at workstation in a modern operations room" style="width:100%;height:auto;display:block;">
         </noscript>
@@ -147,13 +123,13 @@
               class="button-primary"
             >Book a 15 Minute Call</a>
 
-            <!-- Inline next to CTA (desktop) -->
-            <div class="stat-badge stat-badge--shield">
-              <span class="stat-badge__icon" aria-hidden="true"></span>
-              <span class="stat-badge__label">CES 2–5 minute tech response is unmatched</span>
-            </div>
           </div>
         </aside>
+      </div>
+      
+      <div class="stat-badge stat-badge--stopwatch">
+        <span class="stat-badge__icon" aria-hidden="true"></span>
+        <span class="stat-badge__label">CES 2–5 minute tech response is unmatched</span>
       </div>
     </section>
 
