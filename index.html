@@ -10,7 +10,7 @@
   <link rel="apple-touch-icon" href="/images/favicon1.png">
   <link rel="stylesheet" href="/css/styles.css">
 
-  <link rel="preload" as="image" href="/media/hero/poster-v1.jpg" imagesrcset="/media/hero/poster-v1.jpg" />
+  <link rel="preload" as="image" href="/media/hero/poster-1080.jpg" />
 
   <meta property="og:title" content="Managed IT Services, Cybersecurity, VoIP, Video Surveillance - CES IT Support Frederick, MD and DC Metro area">
   <meta property="og:description" content="Secure your business with expert managed IT, AI Driven Video Surveillance, VoIP, and cybersecurity solutions from CES, serving Frederick, MD and the surrounding areas.">
@@ -66,7 +66,6 @@
           <li><a href="/managed-services.html">Managed IT Services</a></li>
           <li><a href="/video-surveillance.html">AI Video Surveillance</a></li>
           <li><a href="/voip-solutions.html">VoIP Solutions</a></li>
-          <li><a href="/blog.html">CES Tech Tips</a></li>
           <li><a href="/testimonials.html">Testimonials</a></li>
           <li><a href="/contact-us.html">Contact Us</a></li>
         </ul>
@@ -78,6 +77,7 @@
     <section class="hero hero--video" aria-label="CES IT Services — trusted IT partner for Frederick, DC Metro, Northern Virginia">
       
       <div class="hero__media">
+
         <video
           class="hero__video"
           autoplay
@@ -85,23 +85,23 @@
           loop
           playsinline
           preload="metadata"
-          poster="/media/hero/poster-v1.jpg"
+          poster="/media/hero/poster-1080.jpg"
         >
-          <source src="/media/hero/hero-v1.webm" type="video/webm" media="(max-width: 768px)">
-          <source src="/media/hero/hero-v1.webm" type="video/webm" media="(max-width: 1440px)">
-          <source src="/media/hero/hero-v1.webm" type="video/webm" media="(min-width: 1441px)">
+          <source src="/media/hero/hero-2160.webm" type="video/webm" media="(min-width: 1441px)">
+          <source src="/media/hero/hero-1080.webm" type="video/webm" media="(min-width: 769px)">
+          <source src="/media/hero/hero-mobile.webm" type="video/webm" media="(max-width: 768px)">
 
-          <source src="/media/hero/hero-v1.mp4" type="video/mp4" media="(max-width: 768px)">
-          <source src="/media/hero/hero-v1.mp4" type="video/mp4" media="(max-width: 1440px)">
-          <source src="/media/hero/hero-v1.mp4" type="video/mp4" media="(min-width: 1441px)">
+          <source src="/media/hero/hero-2560.mp4"  type="video/mp4" media="(min-width: 1441px)">
+          <source src="/media/hero/hero-1080.mp4"   type="video/mp4" media="(min-width: 769px)">
+          <source src="/media/hero/hero-mobile.mp4"  type="video/mp4" media="(max-width: 768px)">
 
-          <img src="/media/hero/poster-v1.jpg" alt="IT professional at workstation in a modern operations room">
+          <img src="/media/hero/poster-1080.jpg" alt="IT professional at workstation in a modern operations room">
         </video>
 
         <div class="hero__scrim" aria-hidden="true"></div>
 
         <noscript>
-          <img src="/media/hero/poster-v1.jpg" alt="IT professional at workstation in a modern operations room" style="width:100%;height:auto;display:block;">
+          <img src="/media/hero/poster-1080.jpg" alt="IT professional at workstation in a modern operations room" style="width:100%;height:auto;display:block;">
         </noscript>
       </div>
 
@@ -393,6 +393,30 @@
   </footer>
 
   <script src="/js/main.js"></script>
+
+  <script>
+    (function () {
+      function choosePoster(w) {
+        if (w <= 768) return '/media/hero/poster-mobile.jpg';
+        if (w <= 1440) return '/media/hero/poster-1080.jpg';
+        return '/media/hero/poster-2560.jpg';
+      }
+      function setPoster() {
+        var v = document.querySelector('.hero__video');
+        if (!v) return;
+        var w = window.innerWidth || document.documentElement.clientWidth;
+        var p = choosePoster(w);
+        if (v.getAttribute('poster') !== p) {
+          v.setAttribute('poster', p);
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setPoster);
+      } else {
+        setPoster();
+      }
+    })();
+  </script>
 
   <script type="application/ld+json">
   {
