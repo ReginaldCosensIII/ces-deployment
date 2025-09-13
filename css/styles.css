@@ -487,6 +487,11 @@ a:hover { color: var(--color-dark-slate); text-decoration: underline; }
   color: #ffffff;
   background: rgba(133, 204, 170, 0.28);
   border-color: rgba(133, 204, 170, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.hero--video > .stat-badge:hover {
+  transform: translateX(-50%) scale(1.1);
 }
 
 @media (min-width: 992px) {
@@ -584,7 +589,7 @@ a:hover { color: var(--color-dark-slate); text-decoration: underline; }
 .hero__media { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
 .hero__video {
   width: 100%; height: 100%; display: block;
-  object-fit: cover; object-position: 70% center;
+  object-fit: cover;
 }
 .hero__scrim {
   position: absolute; inset: 0; z-index: 1; pointer-events: none;
@@ -664,13 +669,21 @@ a:hover { color: var(--color-dark-slate); text-decoration: underline; }
 }
 
 
-/* --- 12b) Desktop/Large refinements --- */
+/* --- 12b) Tablet / Pinched Desktop Refinements --- */
+@media (min-width: 769px) and (max-width: 991px) {
+  .hero--video .hero__card {
+    /* This static value prevents the layout from breaking at this specific size range */
+    margin-bottom: 8rem;
+  }
+}
+
+
+/* --- 12c) Desktop/Large refinements --- */
 @media (min-width: 992px) {
   .hero { min-height: 68vh; }
   .hero__container { padding-bottom: 2rem; }
   .hero__card { padding: 2rem 2.25rem; }
   .hero__card--pullout { margin-left: max(-56px, -5vw); }
-  .hero__video { object-position: 75% center; }
   .hero--video .hero__card {
     /* Controls the space ABOVE the stat badge. Set to 1vh to be minimal on most desktops. */
     margin-bottom: clamp(3rem, 1vh, 11rem);
@@ -685,7 +698,7 @@ a:hover { color: var(--color-dark-slate); text-decoration: underline; }
   }
 }
  
-/* --- 12c) Mobile behavior (≤768px) --- */
+/* --- 12d) Mobile behavior (≤768px) --- */
 @media (max-width: 768px) {
   body { overflow-x: hidden; }
   .hero { overflow: hidden; } 
@@ -761,7 +774,10 @@ a:hover { color: var(--color-dark-slate); text-decoration: underline; }
     color: #ffffff;
   }
 
-  .hero__video { object-position: 68% center; }
+  .hero__video { 
+    /* This rule re-applies the necessary positioning for the mobile-specific video */
+    object-position: 68% center; 
+  }
 }
 
 /* Base icon box (already in your file, keep it) */
